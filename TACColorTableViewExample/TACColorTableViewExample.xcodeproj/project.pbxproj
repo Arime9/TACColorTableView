@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		910A53D41ABBE9E500463826 /* TACColorTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 910A53CE1ABBE9E500463826 /* TACColorTableView.m */; };
+		910A53D51ABBE9E500463826 /* TACColorTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 910A53D01ABBE9E500463826 /* TACColorTableViewCell.m */; };
+		910A53D61ABBE9E500463826 /* TACColorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 910A53D11ABBE9E500463826 /* TACColorTableViewCell.xib */; };
+		910A53D71ABBE9E500463826 /* TACMetaColorTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 910A53D31ABBE9E500463826 /* TACMetaColorTableViewCell.m */; };
 		91233E321ABBD861006D6B02 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 91233E311ABBD861006D6B02 /* main.m */; };
 		91233E3B1ABBD861006D6B02 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91233E391ABBD861006D6B02 /* Main.storyboard */; };
 		91233E3D1ABBD861006D6B02 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91233E3C1ABBD861006D6B02 /* Images.xcassets */; };
@@ -27,6 +31,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		910A53CD1ABBE9E500463826 /* TACColorTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TACColorTableView.h; sourceTree = "<group>"; };
+		910A53CE1ABBE9E500463826 /* TACColorTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TACColorTableView.m; sourceTree = "<group>"; };
+		910A53CF1ABBE9E500463826 /* TACColorTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TACColorTableViewCell.h; sourceTree = "<group>"; };
+		910A53D01ABBE9E500463826 /* TACColorTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TACColorTableViewCell.m; sourceTree = "<group>"; };
+		910A53D11ABBE9E500463826 /* TACColorTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TACColorTableViewCell.xib; sourceTree = "<group>"; };
+		910A53D21ABBE9E500463826 /* TACMetaColorTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TACMetaColorTableViewCell.h; sourceTree = "<group>"; };
+		910A53D31ABBE9E500463826 /* TACMetaColorTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TACMetaColorTableViewCell.m; sourceTree = "<group>"; };
 		91233E2C1ABBD861006D6B02 /* TACColorTableViewExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TACColorTableViewExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		91233E301ABBD861006D6B02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		91233E311ABBD861006D6B02 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -60,11 +71,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		910A53CA1ABBE9A800463826 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				910A53CB1ABBE9E500463826 /* TACColorTableView */,
+			);
+			name = Library;
+			sourceTree = "<group>";
+		};
+		910A53CB1ABBE9E500463826 /* TACColorTableView */ = {
+			isa = PBXGroup;
+			children = (
+				910A53CC1ABBE9E500463826 /* Classes */,
+			);
+			name = TACColorTableView;
+			path = ../TACColorTableView;
+			sourceTree = "<group>";
+		};
+		910A53CC1ABBE9E500463826 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				910A53CD1ABBE9E500463826 /* TACColorTableView.h */,
+				910A53CE1ABBE9E500463826 /* TACColorTableView.m */,
+				910A53CF1ABBE9E500463826 /* TACColorTableViewCell.h */,
+				910A53D01ABBE9E500463826 /* TACColorTableViewCell.m */,
+				910A53D11ABBE9E500463826 /* TACColorTableViewCell.xib */,
+				910A53D21ABBE9E500463826 /* TACMetaColorTableViewCell.h */,
+				910A53D31ABBE9E500463826 /* TACMetaColorTableViewCell.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
 		91233E231ABBD861006D6B02 = {
 			isa = PBXGroup;
 			children = (
 				91233E2E1ABBD861006D6B02 /* TACColorTableViewExample */,
 				91233E481ABBD861006D6B02 /* TACColorTableViewExampleTests */,
+				910A53CA1ABBE9A800463826 /* Library */,
 				91233E2D1ABBD861006D6B02 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -199,6 +242,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				910A53D61ABBE9E500463826 /* TACColorTableViewCell.xib in Resources */,
 				91233E3B1ABBD861006D6B02 /* Main.storyboard in Resources */,
 				91233E401ABBD861006D6B02 /* LaunchScreen.xib in Resources */,
 				91233E3D1ABBD861006D6B02 /* Images.xcassets in Resources */,
@@ -219,9 +263,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				910A53D51ABBE9E500463826 /* TACColorTableViewCell.m in Sources */,
+				910A53D41ABBE9E500463826 /* TACColorTableView.m in Sources */,
 				91B0AC571ABBD89300814440 /* ViewController.m in Sources */,
 				91B0AC561ABBD89300814440 /* AppDelegate.m in Sources */,
 				91233E321ABBD861006D6B02 /* main.m in Sources */,
+				910A53D71ABBE9E500463826 /* TACMetaColorTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

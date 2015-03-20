@@ -2,7 +2,7 @@
 //  AppDelegate.h
 //  TACColorTableViewExample
 //
-//  Created by masato_arai2 on 2015/03/20.
+//  Created by masato_arai on 2015/03/20.
 //  Copyright (c) 2015年 Tea and Coffee. All rights reserved.
 //
 
