@@ -72,6 +72,7 @@
     cell.colorTableView.delegate_colorTableView = self;
     cell.colorTableView.colors = _colors;
     cell.colorTableView.selectedData = _selectedData;
+    [cell.colorTableView reloadData];
     
     return cell;
 }
