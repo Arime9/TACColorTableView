@@ -7,15 +7,12 @@
 //
 
 #import "TACColorTableView.h"
+#import "TACColorData.h"
 #import "TACColorTableViewCell.h"
 
 @implementation TACColorTableView
 
-static NSString * const reuseIdentifier = @"ColorCell";
-
 - (void)initializator {
-    // Initialization code
-    
     CGRect selfFrame = self.frame;
     self.transform = CGAffineTransformMakeRotation(-M_PI / 2);
     self.frame = selfFrame;
@@ -24,7 +21,7 @@ static NSString * const reuseIdentifier = @"ColorCell";
     scrollIndicatorInsets.right = self.frame.size.height - (3.0 * 2 + 2.5);
     self.scrollIndicatorInsets = scrollIndicatorInsets;
     
-    [self registerNib:[UINib nibWithNibName:@"TACColorTableViewCell" bundle:nil] forCellReuseIdentifier:reuseIdentifier];
+    [self registerNib:[TACColorTableViewCell nib] forCellReuseIdentifier:[TACColorTableViewCell reuseIdentifier]];
     self.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.rowHeight = self.frame.size.height;
     self.dataSource = self;
@@ -42,22 +39,19 @@ static NSString * const reuseIdentifier = @"ColorCell";
     return 1;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [_roomColorSelectsArray count];
+    return [_colors count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     // NSInteger section = indexPath.section;
     NSInteger row = indexPath.row;
-    TACColorTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier forIndexPath:indexPath];
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    TACColorTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[TACColorTableViewCell reuseIdentifier] forIndexPath:indexPath];
     
-    // indexPath
-    cell.indexPath = indexPath;
-    // roomColorId, roomColorName
-    NSDictionary *roomColor = _roomColorSelectsArray[row];
-    [cell setRoomColor:roomColor];
+    // TACColorData
+    TACColorData *data = _colors[row];
+    cell.data = data;
     
-    if ([cell.roomColorId compare:_selectedRoomColorId] == NSOrderedSame) {
+    if (data.colorIndex == _selectedData.colorIndex) {
         [self selectRowAtIndexPath:indexPath animated:NO scrollPosition:UITableViewScrollPositionNone];
     }
     
@@ -68,12 +62,10 @@ static NSString * const reuseIdentifier = @"ColorCell";
     // NSInteger section = [indexPath section];
     NSInteger row = [indexPath row];
     // TACColorTableViewCell *cell = (TACColorTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
+    _selectedData = _colors[row];
     
-    _selectedRoomColorId = _roomColorSelectsArray[row][@"roomColorId"];
-    _selectedRoomColorName = _roomColorSelectsArray[row][@"roomColorName"];
-    
-    if ([self.delegate_color respondsToSelector:@selector(setRoomColorId:roomColorName:)]) {
-        [self.delegate_color setRoomColorId:_selectedRoomColorId roomColorName:_selectedRoomColorName];
+    if ([self.delegate_colorTableView respondsToSelector:@selector(colorTableView:selectedData:)]) {
+        [self.delegate_colorTableView colorTableView:self selectedData:_selectedData];
     }
 }
 

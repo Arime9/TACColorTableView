@@ -8,14 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+@class TACColorData;
+
 @interface TACColorTableViewCell : UITableViewCell
 
++ (UINib *)nib;
++ (NSString *)reuseIdentifier;
+
 @property (nonatomic, weak) IBOutlet UIView *subContentView;
-
-@property (nonatomic, strong) NSIndexPath *indexPath;
-@property (nonatomic, copy) NSString *roomColorId;
-@property (nonatomic, copy) NSString *roomColorName;
-
-- (void)setRoomColor:(NSDictionary *)roomColor;
+@property (nonatomic, strong) TACColorData *data;
 
 @end

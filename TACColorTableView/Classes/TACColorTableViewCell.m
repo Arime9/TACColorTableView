@@ -7,16 +7,29 @@
 //
 
 #import "TACColorTableViewCell.h"
+#import "TACColorData.h"
 
 @implementation TACColorTableViewCell
+
++ (UINib *)nib {
+    NSString *nibName = NSStringFromClass([self class]);
+    return [UINib nibWithNibName:nibName bundle:nil];
+}
+
++ (NSString *)reuseIdentifier {
+    return NSStringFromClass([self class]);
+}
 
 - (void)awaker {
     CGRect selfFrame = self.frame;
     self.transform = CGAffineTransformMakeRotation(M_PI / 2);
     self.frame = selfFrame;
     
-    self.subContentView.layer.cornerRadius = self.subContentView.frame.size.width / 2;
-    self.subContentView.layer.masksToBounds = YES;
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
+    
+    // subContentView
+    _subContentView.layer.cornerRadius = _subContentView.frame.size.width / 2;
+    _subContentView.layer.masksToBounds = YES;
 }
 
 - (void)awakeFromNib {
@@ -34,26 +47,9 @@
     }
 }
 
-- (void)setRoomColor:(NSDictionary *)roomColor {
-    _roomColorId = roomColor[@"roomColorId"];
-    _roomColorName = roomColor[@"roomColorName"];
-    switch (_indexPath.row) {
-        case RoomColorOrange:
-            self.subContentView.backgroundColor = [UIColor magentaColor];
-            break;
-        case RoomColorPink:
-            self.subContentView.backgroundColor = [UIColor orangeColor];
-            break;
-        case RoomColorBlue:
-            self.subContentView.backgroundColor = [UIColor blueColor];
-            break;
-        case RoomColorBlack:
-            self.subContentView.backgroundColor = [UIColor blackColor];
-            break;
-        case RoomColorWhite:
-            self.subContentView.backgroundColor = [UIColor grayColor];
-            break;
-    }
+- (void)setData:(TACColorData *)data {
+    _data = data;
+    _subContentView.backgroundColor = data.color;
 }
 
 @end

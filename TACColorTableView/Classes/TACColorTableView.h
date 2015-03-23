@@ -8,20 +8,21 @@
 
 #import <UIKit/UIKit.h>
 
+@class TACColorData;
+
 @protocol TACColorTableViewDelegate;
 
 @interface TACColorTableView : UITableView <UITableViewDataSource, UITableViewDelegate>
 
-@property (nonatomic, weak) id<TACColorTableViewDelegate> delegate_color;
-@property (nonatomic, copy) NSString *selectedRoomColorId;
-@property (nonatomic, copy) NSString *selectedRoomColorName;
-@property (nonatomic, strong) NSArray *roomColorSelectsArray;
+@property (nonatomic, weak) id<TACColorTableViewDelegate> delegate_colorTableView;
+@property (nonatomic, strong) NSMutableArray *colors;
+@property (nonatomic, strong) TACColorData *selectedData;
 
 @end
 
 @protocol TACColorTableViewDelegate <NSObject>
 
 @required
-- (void)setRoomColorId:(NSString *)roomColorId roomColorName:(NSString *)roomColorName;
+- (void)colorTableView:(TACColorTableView *)colorTableView selectedData:(TACColorData *)selectedData;
 
 @end

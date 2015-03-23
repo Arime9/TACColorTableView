@@ -7,9 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TACColorTableView.h"
 
-@interface ViewController : UIViewController
+@class TACColorData;
 
+@interface ViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, TACColorTableViewDelegate>
+
+@property (nonatomic, weak) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) NSMutableArray *colors;
+@property (nonatomic, strong) TACColorData *selectedData;
 
 @end
-

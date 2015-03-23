@@ -7,10 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "TACColorTableView.h"
+
+@class TACColorTableView;
 
 @interface TACMetaColorTableViewCell : UITableViewCell
 
 @property (nonatomic, strong) TACColorTableView *colorTableView;
+
++ (CGRect)frame;
++ (NSString *)reuseIdentifier;
 
 @end

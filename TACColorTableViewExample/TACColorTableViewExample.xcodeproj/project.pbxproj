@@ -18,6 +18,7 @@
 		91233E4C1ABBD861006D6B02 /* TACColorTableViewExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 91233E4B1ABBD861006D6B02 /* TACColorTableViewExampleTests.m */; };
 		91B0AC561ABBD89300814440 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B0AC531ABBD89300814440 /* AppDelegate.m */; };
 		91B0AC571ABBD89300814440 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91B0AC551ABBD89300814440 /* ViewController.m */; };
+		91DF1F2F1ABC0BD900113D12 /* TACColorData.m in Sources */ = {isa = PBXBuildFile; fileRef = 91DF1F2E1ABC0BD900113D12 /* TACColorData.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		91B0AC531ABBD89300814440 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Classes/AppDelegate.m; sourceTree = "<group>"; };
 		91B0AC541ABBD89300814440 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = Classes/ViewController.h; sourceTree = "<group>"; };
 		91B0AC551ABBD89300814440 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = Classes/ViewController.m; sourceTree = "<group>"; };
+		91DF1F2D1ABC0BD900113D12 /* TACColorData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TACColorData.h; sourceTree = "<group>"; };
+		91DF1F2E1ABC0BD900113D12 /* TACColorData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TACColorData.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,13 +94,15 @@
 		910A53CC1ABBE9E500463826 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				91DF1F2D1ABC0BD900113D12 /* TACColorData.h */,
+				91DF1F2E1ABC0BD900113D12 /* TACColorData.m */,
+				910A53D21ABBE9E500463826 /* TACMetaColorTableViewCell.h */,
+				910A53D31ABBE9E500463826 /* TACMetaColorTableViewCell.m */,
 				910A53CD1ABBE9E500463826 /* TACColorTableView.h */,
 				910A53CE1ABBE9E500463826 /* TACColorTableView.m */,
 				910A53CF1ABBE9E500463826 /* TACColorTableViewCell.h */,
 				910A53D01ABBE9E500463826 /* TACColorTableViewCell.m */,
 				910A53D11ABBE9E500463826 /* TACColorTableViewCell.xib */,
-				910A53D21ABBE9E500463826 /* TACMetaColorTableViewCell.h */,
-				910A53D31ABBE9E500463826 /* TACMetaColorTableViewCell.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -268,6 +273,7 @@
 				91B0AC571ABBD89300814440 /* ViewController.m in Sources */,
 				91B0AC561ABBD89300814440 /* AppDelegate.m in Sources */,
 				91233E321ABBD861006D6B02 /* main.m in Sources */,
+				91DF1F2F1ABC0BD900113D12 /* TACColorData.m in Sources */,
 				910A53D71ABBE9E500463826 /* TACMetaColorTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
