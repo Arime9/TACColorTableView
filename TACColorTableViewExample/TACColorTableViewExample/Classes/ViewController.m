@@ -72,8 +72,8 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     TACMetaColorTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[TACMetaColorTableViewCell reuseIdentifier] forIndexPath:indexPath];
     cell.colorTableView.colorTableViewDelegate = self;
-    cell.colorTableView.colors = _colors;
-    cell.colorTableView.selectedData = _selectedData;
+    cell.colorTableView.colors = self.colors;
+    cell.colorTableView.selectedData = self.selectedData;
     [cell.colorTableView reloadData];
     
     self.colorTableView = cell.colorTableView;
@@ -83,7 +83,7 @@
 
 #pragma mark <TACColorTableViewDelegate>
 - (void)colorTableView:(TACColorTableView *)colorTableView selectedData:(TACColorData *)selectedData {
-    _selectedData = selectedData;
+    self.selectedData = selectedData;
 }
 
 @end
