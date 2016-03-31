@@ -14,6 +14,8 @@
 @interface ViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, TACColorTableViewDelegate>
 
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
+@property (nonatomic, weak) TACColorTableView *colorTableView;
+
 @property (nonatomic, strong) NSMutableArray *colors;
 @property (nonatomic, strong) TACColorData *selectedData;
 

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Qjw-o3-oJX">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -23,18 +24,38 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="3ok-04-Cfq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="G4S-qP-qQx"/>
-                            <constraint firstItem="3ok-04-Cfq" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="YHH-ZH-9yB"/>
-                            <constraint firstItem="3ok-04-Cfq" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="cSM-sh-O3K"/>
-                            <constraint firstAttribute="trailing" secondItem="3ok-04-Cfq" secondAttribute="trailing" id="gYo-j6-ynx"/>
+                            <constraint firstItem="3ok-04-Cfq" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Eve-Ks-Eja"/>
+                            <constraint firstItem="3ok-04-Cfq" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="KjS-ee-TBm"/>
+                            <constraint firstItem="3ok-04-Cfq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="hm2-fM-rFM"/>
+                            <constraint firstAttribute="trailing" secondItem="3ok-04-Cfq" secondAttribute="trailing" id="iUi-89-tFB"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="BTL-w6-6tx"/>
                     <connections>
                         <outlet property="tableView" destination="3ok-04-Cfq" id="400-lE-UIo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="2138" y="405"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="xvp-q5-qEr">
+            <objects>
+                <navigationController storyboardIdentifier="NavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Qjw-o3-oJX" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="XOj-Uv-WJY">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="mbc-Wr-P8w"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8YV-fn-7Pn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1326" y="405"/>
         </scene>
     </scenes>
 </document>

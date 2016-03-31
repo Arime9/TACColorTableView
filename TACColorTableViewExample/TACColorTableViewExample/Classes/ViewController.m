@@ -27,7 +27,7 @@
     }
     
     // selectedData
-    self.selectedData = self.colors[0];
+    self.selectedData = self.colors[1];
     
     // tableView
     [self.tableView registerClass:[TACMetaColorTableViewCell class] forCellReuseIdentifier:[TACMetaColorTableViewCell reuseIdentifier]];
@@ -44,6 +44,8 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+    
+    [self.colorTableView flashScrollIndicators];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -69,10 +71,12 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     TACMetaColorTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[TACMetaColorTableViewCell reuseIdentifier] forIndexPath:indexPath];
-    cell.colorTableView.delegate_colorTableView = self;
+    cell.colorTableView.colorTableViewDelegate = self;
     cell.colorTableView.colors = _colors;
     cell.colorTableView.selectedData = _selectedData;
     [cell.colorTableView reloadData];
+    
+    self.colorTableView = cell.colorTableView;
     
     return cell;
 }

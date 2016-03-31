@@ -43,7 +43,6 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    // NSInteger section = indexPath.section;
     NSInteger row = indexPath.row;
     TACColorTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[TACColorTableViewCell reuseIdentifier] forIndexPath:indexPath];
     
@@ -59,16 +58,12 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    // NSInteger section = [indexPath section];
     NSInteger row = [indexPath row];
-    // TACColorTableViewCell *cell = (TACColorTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
     _selectedData = _colors[row];
     
-    if ([self.delegate_colorTableView respondsToSelector:@selector(colorTableView:selectedData:)]) {
-        [self.delegate_colorTableView colorTableView:self selectedData:_selectedData];
+    if ([self.colorTableViewDelegate respondsToSelector:@selector(colorTableView:selectedData:)]) {
+        [self.colorTableViewDelegate colorTableView:self selectedData:_selectedData];
     }
 }
-
-
 
 @end

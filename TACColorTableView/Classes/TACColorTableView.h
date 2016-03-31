@@ -14,7 +14,7 @@
 
 @interface TACColorTableView : UITableView <UITableViewDataSource, UITableViewDelegate>
 
-@property (nonatomic, weak) id<TACColorTableViewDelegate> delegate_colorTableView;
+@property (nonatomic, weak) id<TACColorTableViewDelegate> colorTableViewDelegate;
 @property (nonatomic, strong) NSMutableArray *colors;
 @property (nonatomic, strong) TACColorData *selectedData;
 
